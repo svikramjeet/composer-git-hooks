@@ -12,7 +12,7 @@ class RemoveCommand extends Command
     private $lockFileHooks;
     private $hooksToRemove;
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('remove')

@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class UpdateCommand extends AddCommand
 {
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('update')

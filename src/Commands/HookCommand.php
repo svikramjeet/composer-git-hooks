@@ -21,7 +21,7 @@ class HookCommand extends SymfonyCommand
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName($this->hook)

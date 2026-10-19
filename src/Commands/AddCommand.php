@@ -16,7 +16,7 @@ class AddCommand extends Command
     protected $windows;
     protected $ignoreLock;
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('add')

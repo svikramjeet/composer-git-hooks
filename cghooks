@@ -24,13 +24,12 @@ use Symfony\Component\Console\Application;
 
 $application = new Application('Composer Git Hooks', '3.0.0');
 
-$application->add(new AddCommand());
-$application->add(new UpdateCommand());
-$application->add(new RemoveCommand());
-$application->add(new ListCommand());
+$commands = [new AddCommand(), new UpdateCommand(), new RemoveCommand(), new ListCommand()];
 
 foreach (Hook::getValidHooks($dir) as $hook => $script) {
-    $application->add(new HookCommand($hook, $script, $dir));
+    $commands[] = new HookCommand($hook, $script, $dir);
 }
+
+$application->addCommands($commands);
 
 $application->run();
